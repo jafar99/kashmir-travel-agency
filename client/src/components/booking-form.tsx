@@ -40,10 +40,36 @@ export default function BookingForm({ pkg }: BookingFormProps) {
   });
 
   function onSubmit(data: BookingFormValues) {
+    // Format the message for WhatsApp
+    const message = `New Booking Enquiry!
+
+Package: ${pkg.name}
+Duration: ${pkg.duration}
+Price: $${pkg.price}
+
+Customer Details:
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Preferred Date: ${data.date}
+
+Hotel: ${pkg.hotel.name}
+Activities: ${pkg.activities.map(a => a.name).join(", ")}`;
+
+    // Create WhatsApp URL with the formatted message
+    const whatsappUrl = `https://wa.me/917057048846?text=${encodeURIComponent(message)}`;
+
+    // Show success toast
     toast({
       title: "Booking Request Sent!",
-      description: "We'll contact you shortly to confirm your booking.",
+      description: "Redirecting you to WhatsApp to complete your booking.",
     });
+
+    // Redirect to WhatsApp after a short delay
+    setTimeout(() => {
+      window.open(whatsappUrl, "_blank");
+    }, 1000);
+
     form.reset();
   }
 

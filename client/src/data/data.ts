@@ -41,6 +41,18 @@ export const hotels: Hotel[] = [
     description: "Traditional Kashmiri architecture with modern amenities",
     image: "https://images.unsplash.com/photo-1526786220381-1d21eedf92bf",
     rating: 4
+  },
+  {
+    name: "Houseboat Palace",
+    description: "Luxury houseboat experience on Dal Lake",
+    image: "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099",
+    rating: 4.5
+  },
+  {
+    name: "Pine View Resort Gulmarg",
+    description: "Ski-in/ski-out resort with mountain views",
+    image: "https://images.unsplash.com/photo-1575728252059-8a0f82976fd7",
+    rating: 4.2
   }
 ];
 
@@ -62,6 +74,18 @@ export const activities: Activity[] = [
     description: "Scenic trek through meadows and pine forests",
     image: "https://images.unsplash.com/photo-1651325276807-82f5782a4088",
     duration: "6 hours"
+  },
+  {
+    name: "Mughal Gardens Tour",
+    description: "Visit the famous Nishat and Shalimar gardens",
+    image: "https://images.unsplash.com/photo-1651325276807-82f5782a4088",
+    duration: "4 hours"
+  },
+  {
+    name: "Sonamarg Glacier Visit",
+    description: "Visit the majestic Thajiwas Glacier",
+    image: "https://images.unsplash.com/photo-1651325276807-82f5782a4088",
+    duration: "5 hours"
   }
 ];
 
@@ -74,7 +98,7 @@ export const packages: Package[] = [
     duration: "5 days",
     image: "https://images.unsplash.com/photo-1720593445198-f27b3ca8b4e0",
     hotel: hotels[0],
-    activities: [activities[0], activities[1]]
+    activities: [activities[0], activities[3]]
   },
   {
     id: "gulmarg-adventure",
@@ -83,7 +107,7 @@ export const packages: Package[] = [
     price: 1499,
     duration: "4 days",
     image: "https://images.unsplash.com/photo-1664212008987-705d2ec758e7",
-    hotel: hotels[1],
+    hotel: hotels[4],
     activities: [activities[1], activities[2]]
   },
   {
@@ -94,6 +118,26 @@ export const packages: Package[] = [
     duration: "3 days",
     image: "https://images.unsplash.com/photo-1664212249973-be78ca5261bc",
     hotel: hotels[2],
-    activities: [activities[2], activities[0]]
+    activities: [activities[2], activities[4]]
+  },
+  {
+    id: "houseboat-experience",
+    name: "Dal Lake Houseboat Stay",
+    description: "Unique experience of living on Dal Lake in a luxury houseboat",
+    price: 1799,
+    duration: "4 days",
+    image: "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099",
+    hotel: hotels[3],
+    activities: [activities[0], activities[3]]
+  },
+  {
+    id: "kashmir-complete",
+    name: "Complete Kashmir Experience",
+    description: "Comprehensive tour covering all major attractions",
+    price: 2499,
+    duration: "7 days",
+    image: "https://images.unsplash.com/photo-1664212008987-705d2ec758e7",
+    hotel: hotels[1],
+    activities: [activities[0], activities[1], activities[2]]
   }
 ];
