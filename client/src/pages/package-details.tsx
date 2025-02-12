@@ -5,6 +5,7 @@ import { Star, Calendar } from "lucide-react";
 import BookingForm from "@/components/booking-form";
 import ActivityCard from "@/components/activity-card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import ImageGallery from "@/components/image-gallery";
 
 export default function PackageDetails() {
   const [, params] = useRoute("/package/:id");
@@ -16,6 +17,7 @@ export default function PackageDetails() {
 
   return (
     <div className="min-h-screen pt-20">
+      {/* Hero section with main image */}
       <div
         className="h-[60vh] relative"
         style={{
@@ -45,10 +47,17 @@ export default function PackageDetails() {
               transition={{ delay: 0.2 }}
               className="prose max-w-none"
             >
-              <h2>About this Package</h2>
-              <p className="text-lg">{pkg.description}</p>
+              {/* Image Gallery */}
+              <div className="not-prose mb-8">
+                <ImageGallery images={pkg.gallery} />
+              </div>
 
-              <h2>Day-wise Itinerary</h2>
+              {/* Package Description */}
+              <h2 className="text-3xl font-bold">About this Package</h2>
+              <p className="text-lg text-gray-600">{pkg.description}</p>
+
+              {/* Day-wise Itinerary */}
+              <h2 className="text-3xl font-bold mt-12">Day-wise Itinerary</h2>
               <div className="not-prose mb-8">
                 <Accordion type="single" collapsible className="w-full">
                   {pkg.itinerary.map((day) => (
@@ -85,9 +94,14 @@ export default function PackageDetails() {
                 </Accordion>
               </div>
 
-              <h2>Hotel Details</h2>
+              {/* Hotel Details */}
+              <h2 className="text-3xl font-bold mt-12">Accommodation</h2>
               <div className="not-prose">
-                <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                >
                   <img
                     src={pkg.hotel.image}
                     alt={pkg.hotel.name}
@@ -103,10 +117,11 @@ export default function PackageDetails() {
                     </div>
                     <p className="text-gray-600">{pkg.hotel.description}</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
-              <h2>Included Activities</h2>
+              {/* Activities */}
+              <h2 className="text-3xl font-bold mt-12">Included Activities</h2>
               <div className="not-prose grid grid-cols-1 md:grid-cols-2 gap-6">
                 {pkg.activities.map((activity, index) => (
                   <ActivityCard
@@ -119,6 +134,7 @@ export default function PackageDetails() {
             </motion.div>
           </div>
 
+          {/* Booking Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}

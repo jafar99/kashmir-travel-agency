@@ -5,6 +5,7 @@ export interface Package {
   price: number;
   duration: string;
   image: string;
+  gallery: string[];
   hotel: Hotel;
   activities: Activity[];
   itinerary: DayItinerary[];
@@ -105,6 +106,12 @@ export const packages: Package[] = [
     price: 1999,
     duration: "5 days",
     image: "https://images.unsplash.com/photo-1720593445198-f27b3ca8b4e0",
+    gallery: [
+      "https://images.unsplash.com/photo-1646204894165-95ed03d988ad",
+      "https://images.unsplash.com/photo-1651325269829-9dd855bc53fd",
+      "https://images.unsplash.com/photo-1651325238185-7fa24095b290",
+      "https://images.unsplash.com/photo-1651325276807-82f5782a4088"
+    ],
     hotel: hotels[0],
     activities: [activities[0], activities[3]],
     itinerary: [
@@ -147,6 +154,12 @@ export const packages: Package[] = [
     price: 1499,
     duration: "4 days",
     image: "https://images.unsplash.com/photo-1664212008987-705d2ec758e7",
+    gallery: [
+      "https://images.unsplash.com/photo-1664212008987-705d2ec758e7",
+      "https://images.unsplash.com/photo-1664212249973-be78ca5261bc",
+      "https://images.unsplash.com/photo-1664212008987-705d2ec758e7",
+      "https://images.unsplash.com/photo-1575728252059-8a0f82976fd7"
+    ],
     hotel: hotels[4],
     activities: [activities[1], activities[2]],
     itinerary: [
@@ -183,6 +196,11 @@ export const packages: Package[] = [
     price: 1299,
     duration: "3 days",
     image: "https://images.unsplash.com/photo-1664212249973-be78ca5261bc",
+    gallery: [
+      "https://images.unsplash.com/photo-1664212249973-be78ca5261bc",
+      "https://images.unsplash.com/photo-1651325276807-82f5782a4088",
+      "https://images.unsplash.com/photo-1664212249973-be78ca5261bc"
+    ],
     hotel: hotels[2],
     activities: [activities[2], activities[4]],
     itinerary: [
@@ -213,6 +231,11 @@ export const packages: Package[] = [
     price: 1799,
     duration: "4 days",
     image: "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099",
+    gallery: [
+      "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099",
+      "https://images.unsplash.com/photo-1651325269829-9dd855bc53fd",
+      "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099"
+    ],
     hotel: hotels[3],
     activities: [activities[0], activities[3]],
     itinerary: [
@@ -249,6 +272,12 @@ export const packages: Package[] = [
     price: 2499,
     duration: "7 days",
     image: "https://images.unsplash.com/photo-1664212008987-705d2ec758e7",
+    gallery: [
+      "https://images.unsplash.com/photo-1664212008987-705d2ec758e7",
+      "https://images.unsplash.com/photo-1651325238185-7fa24095b290",
+      "https://images.unsplash.com/photo-1651325276807-82f5782a4088",
+      "https://images.unsplash.com/photo-1664212008987-705d2ec758e7"
+    ],
     hotel: hotels[1],
     activities: [activities[0], activities[1], activities[2]],
     itinerary: [
