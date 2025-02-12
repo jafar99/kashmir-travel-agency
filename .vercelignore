@@ -1,0 +1,24 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+.cache
+
+# Development files
+.env
+.env.local
+*.log
+
+# Version control
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+
+# Server-specific files
+server/**/*.js
+server/**/*.ts
+!server/vite.ts
