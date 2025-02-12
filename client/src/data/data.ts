@@ -7,6 +7,14 @@ export interface Package {
   image: string;
   hotel: Hotel;
   activities: Activity[];
+  itinerary: DayItinerary[];
+}
+
+export interface DayItinerary {
+  day: number;
+  title: string;
+  description: string;
+  activities: string[];
 }
 
 export interface Hotel {
@@ -98,7 +106,39 @@ export const packages: Package[] = [
     duration: "5 days",
     image: "https://images.unsplash.com/photo-1720593445198-f27b3ca8b4e0",
     hotel: hotels[0],
-    activities: [activities[0], activities[3]]
+    activities: [activities[0], activities[3]],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival & Welcome",
+        description: "Arrive in Srinagar and transfer to the luxury hotel. Evening welcome dinner.",
+        activities: ["Airport pickup", "Hotel check-in", "Welcome dinner"]
+      },
+      {
+        day: 2,
+        title: "Dal Lake Exploration",
+        description: "Full day exploring Dal Lake and its floating markets",
+        activities: ["Morning Shikara ride", "Floating market visit", "Garden tour"]
+      },
+      {
+        day: 3,
+        title: "Mughal Gardens Tour",
+        description: "Visit the famous Mughal Gardens of Kashmir",
+        activities: ["Nishat Garden visit", "Shalimar Garden tour", "Evening tea ceremony"]
+      },
+      {
+        day: 4,
+        title: "Local Culture & Crafts",
+        description: "Immerse in local culture and traditional crafts",
+        activities: ["Handicraft workshop", "Local market visit", "Cultural show"]
+      },
+      {
+        day: 5,
+        title: "Departure",
+        description: "Leisurely breakfast and departure",
+        activities: ["Souvenir shopping", "Airport transfer"]
+      }
+    ]
   },
   {
     id: "gulmarg-adventure",
@@ -108,7 +148,33 @@ export const packages: Package[] = [
     duration: "4 days",
     image: "https://images.unsplash.com/photo-1664212008987-705d2ec758e7",
     hotel: hotels[4],
-    activities: [activities[1], activities[2]]
+    activities: [activities[1], activities[2]],
+    itinerary: [
+      {
+        day: 1,
+        title: "Welcome to Gulmarg",
+        description: "Arrive in Gulmarg and settle into your mountain resort",
+        activities: ["Transfer to Gulmarg", "Resort check-in", "Evening orientation"]
+      },
+      {
+        day: 2,
+        title: "Skiing Adventure",
+        description: "Full day of skiing with professional instructors",
+        activities: ["Ski lessons", "Equipment fitting", "Slope practice"]
+      },
+      {
+        day: 3,
+        title: "Gondola & Exploration",
+        description: "Experience the world's highest gondola ride",
+        activities: ["Gondola ride", "Mountain viewpoint visit", "Snow activities"]
+      },
+      {
+        day: 4,
+        title: "Departure Day",
+        description: "Morning activities and departure",
+        activities: ["Morning photography", "Departure preparation", "Transfer to airport"]
+      }
+    ]
   },
   {
     id: "pahalgam-serenity",
@@ -118,7 +184,27 @@ export const packages: Package[] = [
     duration: "3 days",
     image: "https://images.unsplash.com/photo-1664212249973-be78ca5261bc",
     hotel: hotels[2],
-    activities: [activities[2], activities[4]]
+    activities: [activities[2], activities[4]],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Pahalgam",
+        description: "Journey to the valley of shepherds",
+        activities: ["Scenic drive to Pahalgam", "Hotel check-in", "Evening valley walk"]
+      },
+      {
+        day: 2,
+        title: "Valley Exploration",
+        description: "Explore the beautiful valleys and streams",
+        activities: ["Betaab Valley visit", "River side picnic", "Local interaction"]
+      },
+      {
+        day: 3,
+        title: "Departure",
+        description: "Morning activities and return journey",
+        activities: ["Morning nature walk", "Souvenir shopping", "Return transfer"]
+      }
+    ]
   },
   {
     id: "houseboat-experience",
@@ -128,7 +214,33 @@ export const packages: Package[] = [
     duration: "4 days",
     image: "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099",
     hotel: hotels[3],
-    activities: [activities[0], activities[3]]
+    activities: [activities[0], activities[3]],
+    itinerary: [
+      {
+        day: 1,
+        title: "Houseboat Welcome",
+        description: "Check-in to your floating paradise",
+        activities: ["Houseboat check-in", "Welcome tea", "Sunset Shikara ride"]
+      },
+      {
+        day: 2,
+        title: "Lake Life",
+        description: "Experience the unique lifestyle of Dal Lake",
+        activities: ["Floating market visit", "Fishing experience", "Evening cultural show"]
+      },
+      {
+        day: 3,
+        title: "Local Exploration",
+        description: "Explore nearby attractions",
+        activities: ["Garden visits", "Handicraft shopping", "Cooking demonstration"]
+      },
+      {
+        day: 4,
+        title: "Farewell",
+        description: "Final morning on the lake and departure",
+        activities: ["Sunrise photography", "Breakfast on deck", "Departure"]
+      }
+    ]
   },
   {
     id: "kashmir-complete",
@@ -138,6 +250,50 @@ export const packages: Package[] = [
     duration: "7 days",
     image: "https://images.unsplash.com/photo-1664212008987-705d2ec758e7",
     hotel: hotels[1],
-    activities: [activities[0], activities[1], activities[2]]
+    activities: [activities[0], activities[1], activities[2]],
+    itinerary: [
+      {
+        day: 1,
+        title: "Welcome to Kashmir",
+        description: "Begin your comprehensive Kashmir journey",
+        activities: ["Airport welcome", "Hotel check-in", "Trip briefing"]
+      },
+      {
+        day: 2,
+        title: "Srinagar Exploration",
+        description: "Discover the beauty of Srinagar",
+        activities: ["Mughal Gardens tour", "Local market visit", "Evening Shikara ride"]
+      },
+      {
+        day: 3,
+        title: "Gulmarg Adventure",
+        description: "Experience the snow paradise",
+        activities: ["Gondola ride", "Snow activities", "Mountain photography"]
+      },
+      {
+        day: 4,
+        title: "Pahalgam Journey",
+        description: "Visit the valley of shepherds",
+        activities: ["Scenic drive", "Valley exploration", "River side camping"]
+      },
+      {
+        day: 5,
+        title: "Sonamarg Discovery",
+        description: "Explore the meadow of gold",
+        activities: ["Thajiwas Glacier visit", "Pony ride", "Nature walks"]
+      },
+      {
+        day: 6,
+        title: "Cultural Immersion",
+        description: "Deep dive into Kashmiri culture",
+        activities: ["Craft workshops", "Traditional lunch", "Folk performance"]
+      },
+      {
+        day: 7,
+        title: "Farewell Day",
+        description: "Final day in paradise",
+        activities: ["Last minute shopping", "Farewell dinner", "Airport transfer"]
+      }
+    ]
   }
 ];

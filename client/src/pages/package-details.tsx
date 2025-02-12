@@ -1,9 +1,10 @@
 import { useRoute } from "wouter";
 import { packages } from "@/data/data";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, Calendar } from "lucide-react";
 import BookingForm from "@/components/booking-form";
 import ActivityCard from "@/components/activity-card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function PackageDetails() {
   const [, params] = useRoute("/package/:id");
@@ -46,6 +47,43 @@ export default function PackageDetails() {
             >
               <h2>About this Package</h2>
               <p className="text-lg">{pkg.description}</p>
+
+              <h2>Day-wise Itinerary</h2>
+              <div className="not-prose mb-8">
+                <Accordion type="single" collapsible className="w-full">
+                  {pkg.itinerary.map((day) => (
+                    <AccordionItem key={day.day} value={`day-${day.day}`}>
+                      <AccordionTrigger className="hover:no-underline">
+                        <div className="flex items-center gap-4">
+                          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary">
+                            <Calendar className="h-6 w-6" />
+                          </div>
+                          <div className="text-left">
+                            <p className="font-semibold">Day {day.day}</p>
+                            <p className="text-sm text-gray-600">{day.title}</p>
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="pt-4 pb-2 px-4">
+                          <p className="text-gray-600 mb-4">{day.description}</p>
+                          <div className="space-y-2">
+                            {day.activities.map((activity, index) => (
+                              <div
+                                key={index}
+                                className="flex items-center gap-2 text-sm text-gray-600"
+                              >
+                                <div className="w-2 h-2 rounded-full bg-primary/60" />
+                                {activity}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
 
               <h2>Hotel Details</h2>
               <div className="not-prose">
